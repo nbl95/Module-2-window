@@ -1,39 +1,35 @@
 import java.util.Scanner;
 
-public class XoaPTMang {
+public class XoaPTMang{
     public static void main(String[] args) {
-        int index = 0;
-        int[] arr = {1,3,5,7,9};
+        int n, i ,c;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter X");
-        int x = scanner.nextInt();
-        boolean check = false;
-        int i = 0;
-        for ( i =0 ; i< arr.length ; i++){
 
-            if (x == arr[i]){
-                index = i++;
-                check = true;
-                break;
-                
-            }
+        do{
+            System.out.println("nhap so phan tu mang:");
+            n = scanner.nextInt();
+        }while (n <=0);
 
+        int A[]= new int[n];
+
+        System.out.println("nhap cac phan tu trong mang:");
+        for (i = 0; i <n; i++){
+            System.out.print("nhap phan tu thu"+ i +":");
+            A[i]=scanner.nextInt();
         }
-        if(check == false){
-            System.out.printf("x k ton tai");
-        }else {
-            int[] arr2 = new int[arr.length - i+1];
-            for (int j= 0; j< arr2.length; j++){
-                arr2[j]= arr[index];
-                index ++;
-            }
-            for (int j =0; j <arr2.length; j++){
-                System.out.printf( ""+arr2[j]);
+        System.out.println("nhap so nguyen k:");
+        int k = scanner.nextInt();
+
+        for (c = i = 0 ; i <n; i++){
+            if(A[i] != k){
+                A[c] = A[i];
+                c++;
             }
         }
-
+        n = c;
+        System.out.println("Mang con lai sau khi xoa phan tu"+ k +"la:");
+        for (i=0; i< n; i++){
+            System.out.print(A[i]+"\t");
+        }
     }
-
-
-
 }

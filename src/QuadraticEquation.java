@@ -21,7 +21,7 @@ public class QuadraticEquation {
             System.out.println("the equation has no roots");
         }
     }
-    
+
     protected double a, b, c;
 
     public QuadraticEquation() {
